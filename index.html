@@ -40,6 +40,17 @@
   </head>
   <body>
     <main>
+      <section class="popUpWrapper" onclick="hidePopUp()">
+        <div class="popUp">
+          <h3>оставь заявку</h3>
+          <form action="#">
+            <input type="text" placeholder="Имя">
+            <input type="text" placeholder=" Фамилия">
+            <button class="primary">Записаться на курс</button>
+          </form>
+        </div>
+      </section>
+
       <section class="courseInfo">
         <img src="./Images/logo.png" alt="" class="logo" />
         <div class="courseStart">
@@ -63,8 +74,8 @@
         </p>
 
         <div class="button">
-          <button class="primary">Получить программу курса</button>
-          <button class="secondary">Записаться на курс</button>
+          <button class="primary" onclick="showPopUp()">Получить программу курса</button>
+          <button class="secondary" onclick="showPopUp()">Записаться на курс</button>
         </div>
       </section>
       <section class="purple">
@@ -87,7 +98,7 @@
             <div class="desc">секунд</div>
           </div>
         </div>
-        <button class="secondary">Воспользоваться скидкой</button>
+        <button class="secondary" onclick="showPopUp()">Воспользоваться скидкой</button>
       </section>
       <section>
         <div class="courseProgram">

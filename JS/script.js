@@ -4,7 +4,7 @@ function correctData(date) {
 
 function saleData() {
   let now = new Date();
-  let saleDate = new Date(2024, 6, 20);
+  let saleDate = new Date(2024, 7, 3);
   let finish = saleDate - now;
 
   let days = Math.floor(finish / (24 * 60 * 60 * 1000));
@@ -17,7 +17,7 @@ function saleData() {
   timerValue[1].innerHTML = correctData(hours);
   timerValue[2].innerHTML = correctData(minutes);
   timerValue[3].innerHTML = correctData(seconds);
-  console.log(days, hours, minutes, seconds);
+  // console.log(days, hours, minutes, seconds);
   
   if(finish <=0){
     timerValue[0].innerHTML ="00"
@@ -26,7 +26,23 @@ function saleData() {
     timerValue[3].innerHTML = "00"
   }
 }
+
 saleData();
 setInterval(() => {
   saleData();
 }, 1000);
+
+const wrapper = document.querySelector('.popUpWrapper')
+
+function showPopUp() {
+  wrapper.classList.add('active')
+}
+
+function hidePopUp() {
+  let clickedElem = event.target
+  console.log(clickedElem)
+
+  if(clickedElem === wrapper) {
+    wrapper.classList.remove('active')
+  }
+}
